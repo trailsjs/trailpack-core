@@ -12,7 +12,8 @@
   },
   "keywords": [
     "trails",
-    "trailsjs"
+    "trailsjs",
+    "trailpack"
   ],
   "author": "Travis Webb <me@traviswebb.com>",
   "license": "MIT",
