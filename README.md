@@ -1,0 +1,2 @@
+# trailpack-core
+Core Trailpack
