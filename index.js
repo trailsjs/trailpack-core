@@ -1,18 +1,14 @@
 'use strict'
 
 const Trailpack = require('trailpack')
-const TrailsApp = require('trails-app')
 const lib = require('./lib')
 
 module.exports = class Core extends Trailpack {
-  configure (config, pkg) {
+  validate (pkg, config, api) {
     return Promise.all([
       lib.Validator.validatePackage(pkg),
-      lib.Validator.validateConfig(config)
+      lib.Validator.validateConfig(config),
+      lib.Validator.validateApi(api)
     ])
-  }
-
-  initialize (api) {
-    return lib.Validator.validateApi(api)
   }
 }
