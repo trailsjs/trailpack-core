@@ -25,4 +25,8 @@ module.exports = class Core extends Trailpack {
     Object.assign(this.app.config, this.app.config.env[process.env.NODE_ENV])
     return Promise.resolve()
   }
+
+  initialize () {
+    return Promise.resolve()
+  }
 }
