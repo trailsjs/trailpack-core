@@ -6,8 +6,8 @@ const _ = require('lodash')
 
 module.exports = class Core extends Trailpack {
 
-  getName () {
-    return 'core'
+  constructor (app, config) {
+    super(app, require('./config'))
   }
 
   validate (pkg, config, api) {
