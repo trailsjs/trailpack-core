@@ -4,6 +4,12 @@ const Trailpack = require('trailpack')
 const lib = require('./lib')
 const _ = require('lodash')
 
+/**
+ * Core Trailpack
+ *
+ * Validate api, config, and pkg definitions; merge configuration setings; bind
+ * event handlers/logging.
+ */
 module.exports = class Core extends Trailpack {
 
   constructor (app, config) {
@@ -24,7 +30,8 @@ module.exports = class Core extends Trailpack {
    * Merge environment-specific configuration
    */
   configure () {
-    Object.assign(this.app.config, this.app.config.env[process.env.NODE_ENV])
+    _.merge(this.app.config, this.app.config.env[process.env.NODE_ENV])
+
     return Promise.resolve()
   }
 
