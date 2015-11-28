@@ -11,7 +11,6 @@ module.exports = class Core extends Trailpack {
   }
 
   validate (pkg, config, api) {
-    this.app.log.silly(this.config.motd.silly.start)
     this.app.log.info(this.config.motd.info.start)
 
     return Promise.all([

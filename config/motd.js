@@ -11,10 +11,7 @@ module.exports = {
     initialized: `All trailpacks are loaded.`,
     ready (app) {
       return (
-        `
-      Server Ready.
-
-      ---------------------------------------------------------------
+        `---------------------------------------------------------------
         ${new Date()}
         Basic Info
           Application       : ${app.pkg.name}
@@ -53,10 +50,10 @@ module.exports = {
     ready (app) {
       return (
         ` API
-          Models            : ${Object.keys(app.api.models)}
-          Controllers       : ${Object.keys(app.api.controllers)}
-          Policies          : ${Object.keys(app.api.policies)}
-          Trailpacks        : ${app.packs.map(pack => pack.name)}`
+          Models            : ${_.keys(_.omit(app.api.models, 'inspect'))}
+          Controllers       : ${_.keys(_.omit(app.api.controllers, 'inspect'))}
+          Policies          : ${_.keys(_.omit(app.api.policies, 'inspect'))}
+          Trailpacks        : ${_.map(app.packs, pack => pack.name)}`
         )
     },
 
