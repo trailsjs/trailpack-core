@@ -28,8 +28,8 @@ module.exports = {
     ready (app) {
       return (
         ` Database Info
-          ORM               : ${app.config.db.orm}
-          Stores            : ${Object.keys(app.config.db.stores)}
+          ORM               : ${app.config.database.orm}
+          Stores            : ${Object.keys(app.config.database.stores)}
         Web Server Info
           Engine            : ${app.config.server.engine}
           Routes            : ${app.routes.length}
