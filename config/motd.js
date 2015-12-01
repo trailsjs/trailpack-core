@@ -31,10 +31,9 @@ module.exports = {
           ORM               : ${app.config.database.orm}
           Stores            : ${Object.keys(app.config.database.stores)}
         Web Server Info
-          Engine            : ${app.config.server.engine}
+          Engine            : ${app.config.web.engine}
           Routes            : ${app.routes.length}
-          Host              : ${app.config.server.host}
-          Port              : ${app.config.server.port}`
+          Port              : ${app.config.web.port}`
       )
     },
 
