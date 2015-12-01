@@ -12,7 +12,7 @@ const _ = require('lodash')
  */
 module.exports = class Core extends Trailpack {
 
-  constructor (app, config) {
+  constructor (app) {
     super(app, require('./config'))
   }
 
