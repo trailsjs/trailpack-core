@@ -52,6 +52,10 @@ module.exports = class Core extends Trailpack {
       this.app.log.info(this.config.motd.info.initialized)
     })
 
+    lib.Context.bindControllers(this.app)
+    lib.Context.bindServices(this.app)
+    lib.Context.bindPolicies(this.app)
+
     return Promise.resolve()
   }
 }
