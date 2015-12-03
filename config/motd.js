@@ -35,7 +35,7 @@ module.exports = {
           Routes            : ${app.routes.length}
           Port              : ${app.config.web.port}`
       )
-    },
+    }
 
   },
 

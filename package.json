@@ -4,7 +4,7 @@
   "description": "Core Trailpack",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "eslint . && mocha"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,9 @@
     "lodash": "^3.10.1",
     "trailpack": "0.0.2"
   },
-  "eslintConfig": {
-    "env": {
-      "es6": true,
-      "mocha": true,
-      "node": true
-    }
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-trails": "0.0.6",
+    "mocha": "^2.3.4"
   }
 }
