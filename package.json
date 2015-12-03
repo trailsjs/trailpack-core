@@ -23,7 +23,8 @@
   "homepage": "https://github.com/trailsjs/trails-core#readme",
   "dependencies": {
     "joi": "^7.0.0",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "trailpack": "0.0.2"
   },
   "eslintConfig": {
     "env": {
