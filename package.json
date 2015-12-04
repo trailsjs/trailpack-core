@@ -28,7 +28,10 @@
   },
   "devDependencies": {
     "eslint": "^1.10.3",
-    "eslint-config-trails": "0.0.6",
+    "eslint-config-trails": "latest",
     "mocha": "^2.3.4"
+  },
+  "eslintConfig": {
+    "extends": "trails"
   }
 }
