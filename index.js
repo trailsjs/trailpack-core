@@ -61,3 +61,4 @@ module.exports = class Core extends Trailpack {
     })
   }
 }
+
