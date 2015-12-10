@@ -12,17 +12,13 @@ const _ = require('lodash')
  */
 module.exports = class Core extends Trailpack {
 
-  constructor (app) {
-    super(app, require('./config'))
-  }
-
-  validate (pkg, config, api) {
-    this.app.log.info(this.config.motd.info.start)
+  validate () {
+    this.app.log.info(this.app.config.motd.info.start)
 
     return Promise.all([
-      lib.Validator.validatePackage(pkg),
-      lib.Validator.validateConfig(config),
-      lib.Validator.validateApi(api)
+      lib.Validator.validatePackage(this.app.pkg),
+      lib.Validator.validateConfig(this.app.config),
+      lib.Validator.validateApi(this.app.api)
     ])
   }
 
@@ -31,31 +27,37 @@ module.exports = class Core extends Trailpack {
    */
   configure () {
     _.merge(this.app.config, this.app.config.env[process.env.NODE_ENV])
-
-    return Promise.resolve()
   }
 
+  /**
+   * Listen for key app events, and bind context for API resources
+   */
   initialize () {
     this.app.once('trails:stop', () => {
-      this.app.log.silly(this.config.motd.silly.stop)
-      this.app.log.info(this.config.motd.info.stop)
+      this.app.log.silly(this.app.config.motd.silly.stop)
+      this.app.log.info(this.app.config.motd.info.stop)
     })
     this.app.once('trails:ready', () => {
-      this.app.log.info(this.config.motd.info.ready(this.app))
-      this.app.log.debug(this.config.motd.debug.ready(this.app))
-      this.app.log.silly(this.config.motd.silly.ready(this.app))
+      this.app.log.info(this.app.config.motd.info.ready(this.app))
+      this.app.log.debug(this.app.config.motd.debug.ready(this.app))
+      this.app.log.silly(this.app.config.motd.silly.ready(this.app))
 
-      this.app.log.info(this.config.motd.hr)
+      this.app.log.info(this.app.config.motd.hr)
     })
     this.app.once('trailpack:all:initialized', () => {
-      this.app.log.silly(this.config.motd.silly.initialized)
-      this.app.log.info(this.config.motd.info.initialized)
+      this.app.log.silly(this.app.config.motd.silly.initialized)
+      this.app.log.info(this.app.config.motd.info.initialized)
     })
 
     lib.Context.bindControllers(this.app)
     lib.Context.bindServices(this.app)
     lib.Context.bindPolicies(this.app)
+  }
 
-    return Promise.resolve()
+  constructor (app) {
+    super(app, {
+      config: require('./config'),
+      pkg: require('./package')
+    })
   }
 }
