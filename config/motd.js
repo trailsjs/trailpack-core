@@ -28,12 +28,12 @@ module.exports = {
     ready (app) {
       return (
         ` Database Info
-          ORM               : ${app.config.database.orm}
-          Stores            : ${Object.keys(app.config.database.stores)}
+          ORM               : ${app.config.database.orm || 'NOT INSTALLED'}
+          Stores            : ${app.config.database.orm ? Object.keys(app.config.database.stores) : 'N/A'}
         Web Server Info
-          Engine            : ${app.config.web.engine}
-          Routes            : ${app.routes.length}
-          Port              : ${app.config.web.port}`
+          Engine            : ${app.config.web.engine || 'NOT INSTALLED'}
+          Port              : ${app.config.web.engine ? app.config.web.port : 'N/A'}
+          Routes            : ${(app.routes || [ ]).length}`
       )
     }
 
