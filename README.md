@@ -1,5 +1,6 @@
 # trailpack-core
 
+[![Gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
 [![Build status][ci-image]][ci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
@@ -8,7 +9,7 @@
 Core Trailpack. This pack is required by all [Trails](http://trailsjs.io)
 applications, and is reponsible for validating the API definition (the stuff in
 api/), merging environment-specific configuration, binding context on
-Controllers, Services, and Policies, among other important and fundamental
+Controllers, Services, and Policies, and other important and fundamental
 things.
 
 ## Usage
@@ -25,12 +26,8 @@ module.exports = {
 ```
 
 ## Contributing
-We love contributions! In order to be able to review your code efficiently,
-please keep the following in mind:
-
-1. Pull Requests (PRs) must include new and/or updated tests, and all tests [must pass](https://travis-ci.org/trailsjs/trailpack-core).
-2. Use `eslint`! See the `eslintConfig` in [package.json](https://github.com/trailsjs/trailpack-core/blob/master/package.json).
-3. Please [reference the relevant issue](https://github.com/blog/1506-closing-issues-via-pull-requests) in your Pull Request.
+We love contributions! Please check out our [Contributor's Guide](https://github.com/trailsjs/trails/blob/master/CONTRIBUTING.md) for more
+information on how our projects are organized and how to get started.
 
 ## License
 [MIT](https://github.com/trailsjs/trailpack-core/blob/master/LICENSE)
@@ -43,3 +40,6 @@ please keep the following in mind:
 [daviddm-url]: https://david-dm.org/trailsjs/trailpack-core
 [codeclimate-image]: https://img.shields.io/codeclimate/github/trailsjs/trailpack-core.svg?style=flat-square
 [codeclimate-url]: https://codeclimate.com/github/trailsjs/trailpack-core
+[gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
+[gitter-url]: https://gitter.im/trailsjs/trails
+
