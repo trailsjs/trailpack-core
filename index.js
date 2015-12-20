@@ -23,9 +23,16 @@ module.exports = class Core extends Trailpack {
   }
 
   /**
-   * Merge environment-specific configuration
+   * Merge environment-specific configuration.
    */
   configure () {
+    if (!this.app.config.env) {
+      this.app.config.env = { }
+    }
+    if (!this.app.config.env[process.env.NODE_ENV]) {
+      this.app.config.env[process.env.NODE_ENV] = { }
+    }
+
     _.merge(this.app.config, this.app.config.env[process.env.NODE_ENV])
   }
 
