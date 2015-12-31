@@ -22,14 +22,17 @@
   },
   "homepage": "https://github.com/trailsjs/trails-core#readme",
   "dependencies": {
+    "eslint": "^2.0.0-alpha-2",
+    "i18next": "^2.0.10",
     "joi": "^7.0.0",
     "lodash": "^3.10.1",
     "trailpack": "latest"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
-    "eslint-config-trails": "latest",
-    "mocha": "^2.3.4"
+    "eslint": "next",
+    "eslint-config-trails": "^1.0",
+    "mocha": "^2.3.4",
+    "trails": "0.0.14"
   },
   "eslintConfig": {
     "extends": "trails"

@@ -3,9 +3,9 @@ const _ = require('lodash')
 module.exports = {
 
   info: {
-    start: `Starting...`,
-    stop: `Shutting down...`,
-    initialized: `All trailpacks are loaded.`,
+    start: 'Starting...',
+    stop: 'Shutting down...',
+    initialized: 'All trailpacks are loaded.',
     ready (app) {
       return (
         `---------------------------------------------------------------

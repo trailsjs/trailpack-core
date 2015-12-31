@@ -2,7 +2,6 @@
 
 const Trailpack = require('trailpack')
 const lib = require('./lib')
-const _ = require('lodash')
 
 /**
  * Core Trailpack
@@ -22,43 +21,24 @@ module.exports = class Core extends Trailpack {
     ])
   }
 
-  /**
-   * Merge environment-specific configuration.
-   */
   configure () {
-    if (!this.app.config.env) {
-      this.app.config.env = { }
-    }
-    if (!this.app.config.env[process.env.NODE_ENV]) {
-      this.app.config.env[process.env.NODE_ENV] = { }
-    }
 
-    _.merge(this.app.config, this.app.config.env[process.env.NODE_ENV])
   }
 
   /**
    * Listen for key app events, and bind context for API resources
    */
   initialize () {
-    this.app.once('trails:stop', () => {
-      this.app.log.silly(this.app.config.motd.silly.stop)
-      this.app.log.info(this.app.config.motd.info.stop)
-    })
-    this.app.once('trails:ready', () => {
-      this.app.log.info(this.app.config.motd.info.ready(this.app))
-      this.app.log.debug(this.app.config.motd.debug.ready(this.app))
-      this.app.log.silly(this.app.config.motd.silly.ready(this.app))
-
-      this.app.log.info(this.app.config.motd.hr)
-    })
-    this.app.once('trailpack:all:initialized', () => {
-      this.app.log.silly(this.app.config.motd.silly.initialized)
-      this.app.log.info(this.app.config.motd.info.initialized)
-    })
+    lib.Motd.bindMotdInitialize(this.app)
 
     lib.Context.bindControllers(this.app)
     lib.Context.bindServices(this.app)
     lib.Context.bindPolicies(this.app)
+
+    return lib.i18n.init(this.app).then(i18n => {
+      this.i18n = i18n
+      this.app.emit('i18n:ready')
+    })
   }
 
   constructor (app) {

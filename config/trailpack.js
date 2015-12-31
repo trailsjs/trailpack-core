@@ -1,3 +1,6 @@
 module.exports = {
-  provides: { }
+  provides: { },
+  emits: {
+    initialize: [ 'i18n:ready' ]
+  }
 }
