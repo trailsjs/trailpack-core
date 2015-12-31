@@ -22,11 +22,11 @@ module.exports = {
     ready (app) {
       return (
         ` Database Info
-          ORM               : ${app.config.database.orm || 'NOT INSTALLED'}
-          Stores            : ${app.config.database.orm ? Object.keys(app.config.database.stores) : 'N/A'}
+          ORM               : ${_.get(app.config, 'database.orm') || 'NOT INSTALLED'}
+          Stores            : ${_.get(app.config, 'database.orm') ? Object.keys(app.config.database.stores) : 'N/A'}
         Web Server Info
-          Engine            : ${_.get(app, 'config.web.engine') || 'NOT INSTALLED'}
-          Port              : ${_.get(app, 'config.web.engine') ? _.get(app, 'config.web.port') : 'N/A'}
+          Engine            : ${_.get(app.config, 'web.engine') || 'NOT INSTALLED'}
+          Port              : ${_.get(app.config, 'web.engine') ? _.get(app, 'config.web.port') : 'N/A'}
           Routes            : ${(app.routes || [ ]).length}`
       )
     }
