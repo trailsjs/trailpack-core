@@ -21,10 +21,6 @@ module.exports = class Core extends Trailpack {
     ])
   }
 
-  configure () {
-
-  }
-
   /**
    * Listen for key app events, and bind context for API resources
    */

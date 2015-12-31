@@ -1,3 +1,4 @@
+/*eslint max-len: 0 */
 const _ = require('lodash')
 
 module.exports = {
