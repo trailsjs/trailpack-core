@@ -42,6 +42,10 @@ module.exports = class Core extends Trailpack {
       config: require('./config'),
       pkg: require('./package')
     })
+
+    if (!this.app.config.i18n) {
+      this.app.config.i18n = { }
+    }
   }
 }
 
