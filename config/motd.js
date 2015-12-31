@@ -2,10 +2,7 @@ const _ = require('lodash')
 
 module.exports = {
 
-  hr: `---------------------------------------------------------------`,
-
   info: {
-
     start: `Starting...`,
     stop: `Shutting down...`,
     initialized: `All trailpacks are loaded.`,
@@ -19,12 +16,9 @@ module.exports = {
           Environment       : ${process.env.NODE_ENV}`
       )
     }
-
   },
 
-
   debug: {
-
     ready (app) {
       return (
         ` Database Info
@@ -36,11 +30,9 @@ module.exports = {
           Routes            : ${(app.routes || [ ]).length}`
       )
     }
-
   },
 
   silly: {
-
     stop: `
       Happy trails to you, until we meet again.
       - Dale Evans
@@ -49,9 +41,9 @@ module.exports = {
     ready (app) {
       return (
         ` API
-          Models            : ${_.keys(_.omit(app.api.models, 'inspect'))}
-          Controllers       : ${_.keys(_.omit(app.api.controllers, 'inspect'))}
-          Policies          : ${_.keys(_.omit(app.api.policies, 'inspect'))}
+          Models            : ${_.keys(app.api.models)}
+          Controllers       : ${_.keys(app.api.controllers)}
+          Policies          : ${_.keys(app.api.policies)}
           Trailpacks        : ${_.map(app.packs, pack => pack.name)}`
         )
     },
@@ -89,3 +81,4 @@ J     \\         /._                    -tI/ |
     `
   }
 }
+
