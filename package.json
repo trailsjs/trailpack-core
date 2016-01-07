@@ -13,27 +13,33 @@
   "keywords": [
     "trails",
     "trailsjs",
-    "trailpack"
+    "plugin",
+    "addon"
   ],
-  "author": "Travis Webb <me@traviswebb.com>",
+  "author": "Trails.js Team <hello@trailsjs.io>",
+  "contributors": [
+    {
+      "name": "Travis Webb",
+      "url": "https://github.com/tjwebb"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/trailsjs/trails-core/issues"
   },
   "homepage": "https://github.com/trailsjs/trails-core#readme",
   "dependencies": {
-    "eslint": "^2.0.0-alpha-2",
     "i18next": "^2.0.10",
     "joi": "^7.0.0",
     "lodash": "^3.10.1",
-    "trailpack": "latest"
+    "trailpack": "0.0.18"
   },
   "devDependencies": {
-    "eslint": "next",
-    "eslint-config-trails": "^1.0",
+    "eslint": "^2.0.0-alpha-2",
+    "eslint-config-trails": "^1.0.1",
     "mocha": "^2.3.4",
     "smokesignals": "0.0.8",
-    "trails": "0.0.14"
+    "trails": "0.0.22"
   },
   "eslintConfig": {
     "extends": "trails"
