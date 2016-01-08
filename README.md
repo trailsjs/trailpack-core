@@ -5,6 +5,7 @@
 [![Build status][ci-image]][ci-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Code Climate][codeclimate-image]][codeclimate-url]
+[![Follow @trailsjs on Twitter][twitter-image]][twitter-url]
 
 Core Trailpack. This pack is required by all [Trails](http://trailsjs.io)
 applications, and is reponsible for validating the API definition (the stuff in
@@ -42,4 +43,6 @@ information on how our projects are organized and how to get started.
 [codeclimate-url]: https://codeclimate.com/github/trailsjs/trailpack-core
 [gitter-image]: http://img.shields.io/badge/+%20GITTER-JOIN%20CHAT%20%E2%86%92-1DCE73.svg?style=flat-square
 [gitter-url]: https://gitter.im/trailsjs/trails
+[twitter-image]: https://img.shields.io/twitter/follow/trailsjs.svg?style=social
+[twitter-url]: https://twitter.com/trailsjs
 
