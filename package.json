@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/trailsjs/trails-core#readme",
   "dependencies": {
-    "i18next": "2.0.10",
+    "i18next": "2.0.17",
     "joi": "^7.1.0",
     "lodash": "^3.10.1",
     "trailpack": "0.0.18"
@@ -39,7 +39,7 @@
     "eslint-config-trails": "^1.0.1",
     "mocha": "^2.3.4",
     "smokesignals": "0.0.8",
-    "trails": "0.0.22"
+    "trails": "0.0.23"
   },
   "eslintConfig": {
     "extends": "trails"
