@@ -13,6 +13,11 @@ api/), merging environment-specific configuration, binding context on
 Controllers, Services, and Policies, and other important and fundamental
 things.
 
+In particular, this trailpack includes and configures two very important
+things:
+- Logging
+- Internationalization (i18n)
+
 ## Usage
 The core trailpack should always be loaded in your trailpack config.
 
