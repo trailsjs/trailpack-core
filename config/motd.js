@@ -2,6 +2,7 @@
 const _ = require('lodash')
 
 module.exports = {
+  hr: `---------------------------------------------------------------`,
 
   info: {
     start: 'Starting...',
