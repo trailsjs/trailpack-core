@@ -27,8 +27,9 @@ module.exports = {
           ORM               : ${_.get(app.config, 'database.orm') || 'NOT INSTALLED'}
           Stores            : ${_.get(app.config, 'database.orm') ? Object.keys(app.config.database.stores) : 'N/A'}
         Web Server Info
-          Engine            : ${_.get(app.config, 'views.engine') || 'NOT INSTALLED'}
-          Port              : ${_.get(app.config, 'views.engine') ? _.get(app, 'config.web.port') : 'N/A'}
+          Server            : ${_.get(app.config, 'web.server') || 'NOT INSTALLED'}
+          View Engine       : ${_.get(app.config, 'views.engine') || 'NOT INSTALLED'}
+          Port              : ${_.get(app.config, 'web.port') || 'N/A'}
           Routes            : ${(app.routes || [ ]).length}`
       )
     }
