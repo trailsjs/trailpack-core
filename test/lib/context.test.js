@@ -22,8 +22,8 @@ describe('lib.Context', () => {
       const methods = lib.Context.getClassMethods(new B())
 
       assert.equal(methods.length, 2)
-      assert(_.contains(methods, 'foo'))
-      assert(_.contains(methods, 'bar'))
+      assert(_.includes(methods, 'foo'))
+      assert(_.includes(methods, 'bar'))
     })
   })
 })
