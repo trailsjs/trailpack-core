@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/trailsjs/trails-core#readme",
   "dependencies": {
-    "i18next": "2.0.10",
+    "i18next": "2.0.20",
     "joi": "^7.1.0",
     "lodash": "^4.0.0",
-    "trailpack": "0.0.18"
+    "trailpack": "1.0.0-alpha-1"
   },
   "devDependencies": {
     "eslint": "^2.0.0-alpha-2",
