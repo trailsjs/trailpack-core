@@ -22,7 +22,6 @@ module.exports = class Core extends Trailpack {
   }
 
   configure () {
-    this.app.log = this.config.log.logger
   }
 
   /**
