@@ -18,7 +18,15 @@ things:
 - Logging
 - Internationalization (i18n)
 
+## Install
+
+```sh
+$ npm install --save trailpack-core
+```
+
 ## Usage
+
+### Configuration
 The core trailpack should always be loaded in your trailpack config.
 
 ```js
@@ -28,6 +36,49 @@ module.exports = {
   packs: [
     require('trailpack-core')
   ]
+}
+```
+
+### Logging
+This trailpack exposes the configured logger (in `config.log`) on the main `app`
+object. See [archetype/config/log.js](https://github.com/trailsjs/trailpack-core/tree/master/archetype/config/log.js)
+for an example configuration.
+
+```js
+// api/controllers/ExampleController.js
+module.exports = class ExampleController extends Controller {
+
+  /**
+   * Logs the querystring
+   */
+  exampleHandler (req, res) {
+    this.log.debug(req.query)
+  }
+}
+```
+
+### Internationalization
+This trailpack also exposes the i18next translator function on the main `app`
+object as `app.__` and `app.t`. See [archetype/config/i18n.js](https://github.com/trailsjs/trailpack-core/tree/master/archetype/config)
+for an example configuration.
+
+```js
+// config/locales/en.json
+{
+  "helloworld": "Hello World"
+}
+```
+
+```js
+// api/controllers/ExampleController.js
+module.exports = class ExampleController extends Controller {
+
+  /**
+   * Returns the string "Hello World" if locale is set to "en"
+   */
+  exampleHandler (req, res) {
+    this.app.t('helloworld')
+  }
 }
 ```
 

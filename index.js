@@ -21,6 +21,10 @@ module.exports = class Core extends Trailpack {
     ])
   }
 
+  configure () {
+    this.app.log = this.config.log.logger
+  }
+
   /**
    * Listen for key app events, and bind context for API resources
    */
@@ -34,6 +38,7 @@ module.exports = class Core extends Trailpack {
 
     return lib.i18n.init(this.app).then(i18n => {
       this.i18n = i18n
+      this.app.__ = i18n.t
       this.app.emit('i18n:ready')
     })
   }
@@ -46,6 +51,9 @@ module.exports = class Core extends Trailpack {
 
     if (!this.app.config.i18n) {
       this.app.config.i18n = { }
+    }
+    if (!this.app.config.log) {
+      this.app.config.log = { }
     }
   }
 }
