@@ -1,5 +1,6 @@
 'use strict'
 
+const _ = require('lodash')
 const Trailpack = require('trailpack')
 const lib = require('./lib')
 
@@ -12,7 +13,9 @@ const lib = require('./lib')
 module.exports = class Core extends Trailpack {
 
   validate () {
-    this.app.log.info(this.app.config.motd.info.start)
+    if (!this.app.config.log.logger) {
+      throw new Error('config.log.logger is not set.')
+    }
 
     return Promise.all([
       lib.Validator.validatePackage(this.app.pkg),
@@ -37,7 +40,10 @@ module.exports = class Core extends Trailpack {
 
     return lib.i18n.init(this.app).then(i18n => {
       this.i18n = i18n
-      this.app.__ = i18n.t
+      Object.defineProperty(this.app, '__', {
+        value: i18n.t,
+        writable: false
+      })
       this.app.emit('i18n:ready')
     })
   }
