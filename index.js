@@ -1,6 +1,5 @@
 'use strict'
 
-const _ = require('lodash')
 const Trailpack = require('trailpack')
 const lib = require('./lib')
 
