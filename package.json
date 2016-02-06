@@ -32,7 +32,7 @@
   "dependencies": {
     "i18next": "2.1.0",
     "joi": "^7.1.0",
-    "lodash": "^4.0.0",
+    "lodash": "^4.1.0",
     "trailpack": "^1.0.0-alpha-1"
   },
   "devDependencies": {
