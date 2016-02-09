@@ -24,6 +24,10 @@ module.exports = class Core extends Trailpack {
   }
 
   configure () {
+    this.app.controllers = lib.Context.bindMethods(this.app, 'controllers')
+    this.app.policies = lib.Context.bindMethods(this.app, 'policies')
+    this.app.services = lib.Context.bindMethods(this.app, 'services')
+    this.app.models = lib.Context.bindMethods(this.app, 'models')
   }
 
   /**
@@ -31,11 +35,6 @@ module.exports = class Core extends Trailpack {
    */
   initialize () {
     lib.Motd.bindMotdInitialize(this.app)
-
-    this.app.controllers = lib.Context.bindMethods(this.app, 'controllers')
-    this.app.policies = lib.Context.bindMethods(this.app, 'policies')
-    this.app.services = lib.Context.bindMethods(this.app, 'services')
-    this.app.models = lib.Context.bindMethods(this.app, 'models')
 
     return lib.i18n.init(this.app).then(i18n => {
       this.i18n = i18n
