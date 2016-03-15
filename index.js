@@ -40,7 +40,8 @@ module.exports = class Core extends Trailpack {
       this.i18n = i18n
       Object.defineProperty(this.app, '__', {
         value: i18n.t,
-        writable: false
+        writable: false,
+        configurable: true
       })
       this.app.emit('i18n:ready')
     })
