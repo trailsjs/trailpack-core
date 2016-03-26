@@ -34,11 +34,10 @@ module.exports = class Core extends Trailpack {
 
     // create paths if they don't exist
     return Promise.all(Object.keys(paths).map(pathName => {
-      let stats
       const dir = paths[pathName]
 
       try {
-        stats = fs.statSync(dir)
+        const stats = fs.statSync(dir)
 
         if (!stats.isDirectory()) {
           this.log.error('The path "', pathName, '" is not a directory.')
