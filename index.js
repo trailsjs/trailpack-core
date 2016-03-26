@@ -33,6 +33,9 @@ module.exports = class Core extends Trailpack {
 
     const paths = this.app.config.main.paths
 
+    if (!paths.temp) {
+      paths.temp = path.resolve(paths.root, '.tmp')
+    }
     if (!paths.sockets) {
       paths.sockets = path.resolve(paths.temp, 'sockets')
     }
