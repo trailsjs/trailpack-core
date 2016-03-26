@@ -89,6 +89,8 @@ information on how our projects are organized and how to get started.
 ## License
 [MIT](https://github.com/trailsjs/trailpack-core/blob/master/LICENSE)
 
+<img src="http://i.imgur.com/dCjNisP.png">
+
 [npm-image]: https://img.shields.io/npm/v/trailpack-core.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/trailpack-core
 [ci-image]: https://img.shields.io/travis/trailsjs/trailpack-core/master.svg?style=flat-square
