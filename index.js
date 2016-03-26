@@ -1,5 +1,6 @@
 'use strict'
 
+const path = require('path')
 const fs = require('fs')
 const Trailpack = require('trailpack')
 const lib = require('./lib')
@@ -31,6 +32,13 @@ module.exports = class Core extends Trailpack {
     this.app.models = lib.Context.bindMethods(this.app, 'models')
 
     const paths = this.app.config.main.paths
+
+    if (!paths.sockets) {
+      paths.sockets = path.resolve(paths.temp, 'sockets')
+    }
+    if (!paths.log) {
+      paths.logs = path.resolve(paths.temp, 'log')
+    }
 
     // create paths if they don't exist
     return Promise.all(Object.keys(paths).map(pathName => {
