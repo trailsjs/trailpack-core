@@ -13,9 +13,7 @@
   "keywords": [
     "trails",
     "trailsjs",
-    "trailpack",
-    "plugin",
-    "addon"
+    "trailpack"
   ],
   "author": "Trails.js Team <hello@trailsjs.io>",
   "contributors": [
@@ -33,14 +31,14 @@
     "i18next": "2.1.0",
     "joi": "^8.0.0",
     "lodash": "^4.2.0",
-    "trailpack": "^1.0.0-alpha-1"
+    "trailpack": "^1.0.0-beta-1"
   },
   "devDependencies": {
-    "eslint": "^2.0.0-beta.2",
+    "eslint": "^2.4",
     "eslint-config-trails": "^1.0.1",
     "mocha": "^2.3.4",
-    "smokesignals": "^1.0.0-alpha-1",
-    "trails": "^1.0.0-alpha-4"
+    "smokesignals": "^1.0.0",
+    "trails": "^1.0.0-beta-1"
   },
   "eslintConfig": {
     "extends": "trails"
