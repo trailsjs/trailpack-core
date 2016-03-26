@@ -1,5 +1,6 @@
 'use strict'
 
+const fs = require('fs')
 const Trailpack = require('trailpack')
 const lib = require('./lib')
 
@@ -28,6 +29,27 @@ module.exports = class Core extends Trailpack {
     this.app.policies = lib.Context.bindMethods(this.app, 'policies')
     this.app.services = lib.Context.bindMethods(this.app, 'services')
     this.app.models = lib.Context.bindMethods(this.app, 'models')
+
+    const paths = this.app.config.main.paths
+
+    // create paths if they don't exist
+    return Promise.all(Object.keys(paths).map(pathName => {
+      let stats
+      const dir = paths[pathName]
+
+      try {
+        stats = fs.statSync(dir)
+
+        if (!stats.isDirectory()) {
+          this.log.error('The path "', pathName, '" is not a directory.')
+          this.log.error('config.main.paths should only contain paths to directories')
+          return Promise.reject()
+        }
+      }
+      catch (e) {
+        fs.mkdirSync(dir)
+      }
+    }))
   }
 
   /**

@@ -1,3 +1,4 @@
+const path = require('path')
 const _ = require('lodash')
 const smokesignals = require('smokesignals')
 
@@ -26,8 +27,11 @@ const App = {
     main: {
       packs: [
         smokesignals.Trailpack,
-        require('../') // trailpack-core
-      ]
+        require('../../') // trailpack-core
+      ],
+      paths: {
+        testdir: path.resolve(__dirname, 'testdir')
+      }
     },
     i18n: {
       lng: 'en',

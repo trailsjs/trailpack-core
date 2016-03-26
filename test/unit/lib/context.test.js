@@ -2,7 +2,7 @@
 
 const _ = require('lodash')
 const assert = require('assert')
-const lib = require('../../lib')
+const lib = require('../../../lib')
 
 describe('lib.Context', () => {
   describe('#getClassMethods', () => {
