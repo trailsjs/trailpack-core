@@ -37,7 +37,7 @@
     "eslint": "^2.4",
     "eslint-config-trails": "^1.0.1",
     "mocha": "^2.3.4",
-    "smokesignals": "^1.0.0",
+    "smokesignals": "^1.0.2",
     "trails": "^1.0.0-beta-1"
   },
   "eslintConfig": {
