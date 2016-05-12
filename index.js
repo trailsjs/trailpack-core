@@ -88,9 +88,6 @@ module.exports = class Core extends Trailpack {
     if (!this.app.config.i18n) {
       this.app.config.i18n = { }
     }
-    if (!this.app.config.log) {
-      this.app.config.log = { }
-    }
   }
 }
 
