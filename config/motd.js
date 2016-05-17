@@ -9,11 +9,14 @@ module.exports = {
     stop: 'Shutting down...',
     initialized: 'All trailpacks are loaded.',
     ready (app) {
+      const baseUrl = _.get(app.config, 'web.baseUrl') ||
+          `http://${_.get(app.config, 'web.host') || 'localhost'}:${_.get(app.config, 'web.port') || '80'}`
       return (
         `---------------------------------------------------------------
         ${new Date()}
         Basic Info
           Application       : ${app.pkg.name}
+          Application root  : ${baseUrl}
           Version           : ${app.pkg.version}
           Environment       : ${process.env.NODE_ENV}`
       )
