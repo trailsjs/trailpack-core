@@ -26,9 +26,9 @@ module.exports = class Core extends Trailpack {
   }
 
   configure () {
+    this.app.services = lib.Context.bindMethods(this.app, 'services')
     this.app.controllers = lib.Context.bindMethods(this.app, 'controllers')
     this.app.policies = lib.Context.bindMethods(this.app, 'policies')
-    this.app.services = lib.Context.bindMethods(this.app, 'services')
     this.app.models = lib.Context.bindMethods(this.app, 'models')
 
     const paths = this.app.config.main.paths
