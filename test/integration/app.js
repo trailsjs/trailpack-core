@@ -22,6 +22,7 @@ const App = {
     name: 'core-trailpack-test'
   },
   api: {
+    customkey: {}
   },
   config: {
     main: {
