@@ -5,6 +5,11 @@ const fs = require('fs')
 const assert = require('assert')
 
 describe('Core Trailpack', () => {
+  describe('#validate', () => {
+    it('should validate an api object with arbitrary keys', () => {
+      assert(global.app.api.customkey)
+    })
+  })
   describe('#configure', () => {
     it('should create missing directories for configured paths', () => {
       assert(fs.statSync(path.resolve(__dirname, 'testdir')))
