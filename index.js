@@ -46,15 +46,16 @@ module.exports = class Core extends Trailpack {
     // create paths if they don't exist
     return Promise.all(Object.keys(paths).map(pathName => {
       const dir = paths[pathName]
-      if(Array.isArray(dir)){
+      if (Array.isArray(dir)) {
         dir.map(item => {
-          pathCreate(item.path)
+          pathCreate(item.path, pathName)
         })
-      }else{
-        pathCreate(dir)
+      }
+      else {
+        pathCreate(dir, pathName)
       }
     }))
-    function pathCreate(dir) {
+    function pathCreate(dir, pathName) {
       try {
         const stats = fs.statSync(dir)
 
