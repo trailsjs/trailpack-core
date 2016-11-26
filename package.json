@@ -1,6 +1,6 @@
 {
   "name": "trailpack-core",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Core Trailpack",
   "main": "index.js",
   "scripts": {
@@ -30,8 +30,7 @@
   "dependencies": {
     "trailpack": "^2"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "eslintConfig": {
     "extends": "trails"
   }
