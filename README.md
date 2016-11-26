@@ -1,11 +1,16 @@
 # trailpack-core
 
 [![Gitter][gitter-image]][gitter-url]
-[![NPM version][npm-image]][npm-url]
-[![Build status][ci-image]][ci-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Code Climate][codeclimate-image]][codeclimate-url]
 [![Follow @trailsjs on Twitter][twitter-image]][twitter-url]
+
+## Note: This pack is deprecated as of Trails v2.0. 
+
+The functionality in this pack were merged into the Trails core in v2.
+If this pack is included in your app config, or is relied upon by any
+trailpack in your application, it simply print a warning and exit. In
+Trails 3.0 (released in April 2017), this trailpack will be completely removed.
+
+----------
 
 Core Trailpack. This pack is required by all [Trails](http://trailsjs.io)
 applications, and is reponsible for validating the API definition (the stuff in

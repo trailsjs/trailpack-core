@@ -4,11 +4,11 @@
   "description": "Core Trailpack",
   "main": "index.js",
   "scripts": {
-    "test": "eslint . && mocha"
+    "test": "echo 'No tests. This trailpack is deprecated'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trailsjs/trails-core.git"
+    "url": "git+https://github.com/trailsjs/trails.git"
   },
   "keywords": [
     "trails",
@@ -24,21 +24,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/trailsjs/trails-core/issues"
+    "url": "https://github.com/trailsjs/trails/issues"
   },
-  "homepage": "https://github.com/trailsjs/trails-core#readme",
+  "homepage": "https://github.com/trailsjs/trails#readme",
   "dependencies": {
-    "i18next": "^3.4.1",
-    "joi": "^9.0.4",
-    "lodash": "^4.15.0",
-    "trailpack": "^1.0.5"
+    "trailpack": "^2"
   },
   "devDependencies": {
-    "eslint": "^3.3.0",
-    "eslint-config-trails": "^1.0.7",
-    "mocha": "^3.0.2",
-    "smokesignals": "^1.2.2",
-    "trails": "^1.0.4"
   },
   "eslintConfig": {
     "extends": "trails"
